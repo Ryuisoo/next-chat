@@ -199,16 +199,7 @@ const ko: PartialLocaleType = {
       SubTitle: "사용자의 최신 메시지가 이 템플릿에 채워집니다.",
     },
 
-    Update: {
-      Version: (x: string) => `현재 버전: ${x}`,
-      IsLatest: "최신 버전입니다.",
-      CheckUpdate: "업데이트 확인",
-      IsChecking: "업데이트 확인 중...",
-      FoundUpdate: (x: string) => `새 버전 발견: ${x}`,
-      GoToUpdate: "업데이트로 이동",
-      Success: "업데이트 성공",
-      Failed: "업데이트 실패",
-    },
+
     SendKey: "키 전송",
     Theme: "테마",
     TightBorder: "테두리 없는 모드",
@@ -301,15 +292,7 @@ const ko: PartialLocaleType = {
       SubTitle: "압축되지 않은 히스토리 메시지가 이 값을 초과하면 압축 수행",
     },
 
-    Usage: {
-      Title: "잔액 조회",
-      SubTitle(used: any, total: any) {
-        return `이번 달 사용된 금액: $${used}，총 구독 금액: $${total}`;
-      },
-      IsChecking: "확인 중...",
-      Check: "다시 확인",
-      NoAccess: "잔액을 보려면 API 키 또는 접근 비밀번호를 입력하십시오.",
-    },
+
 
     Access: {
       SaasStart: {
@@ -804,61 +787,7 @@ const ko: PartialLocaleType = {
     Topic: "주제",
     Time: "시간",
   },
-  SdPanel: {
-    Prompt: "프롬프트",
-    NegativePrompt: "부정적 프롬프트",
-    PleaseInput: (name: string) => `${name}을 입력하세요`,
-    AspectRatio: "비율",
-    ImageStyle: "이미지 스타일",
-    OutFormat: "출력 형식",
-    AIModel: "AI 모델",
-    ModelVersion: "모델 버전",
-    Submit: "제출",
-    ParamIsRequired: (name: string) => `${name}은 필수 입력 항목입니다`,
-    Styles: {
-      D3Model: "3d-model",
-      AnalogFilm: "analog-film",
-      Anime: "anime",
-      Cinematic: "cinematic",
-      ComicBook: "comic-book",
-      DigitalArt: "digital-art",
-      Enhance: "enhance",
-      FantasyArt: "fantasy-art",
-      Isometric: "isometric",
-      LineArt: "line-art",
-      LowPoly: "low-poly",
-      ModelingCompound: "modeling-compound",
-      NeonPunk: "neon-punk",
-      Origami: "origami",
-      Photographic: "photographic",
-      PixelArt: "pixel-art",
-      TileTexture: "tile-texture",
-    },
-  },
-  Sd: {
-    SubTitle: (count: number) => `${count} 개의 이미지`,
-    Actions: {
-      Params: "파라미터 보기",
-      Copy: "프롬프트 복사",
-      Delete: "삭제",
-      Retry: "다시 시도",
-      ReturnHome: "홈으로 돌아가기",
-      History: "기록",
-    },
-    EmptyRecord: "아직 이미지가 없습니다",
-    Status: {
-      Name: "상태",
-      Success: "성공",
-      Error: "오류",
-      Wait: "대기",
-      Running: "실행 중",
-    },
-    Danger: {
-      Delete: "삭제하시겠습니까?",
-    },
-    GenerateParams: "파라미터 생성",
-    Detail: "상세",
-  },
+
 };
 
 export default ko;

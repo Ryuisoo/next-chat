@@ -180,14 +180,7 @@ const ar: PartialLocaleType = {
       SubTitle: "سيتم ملء آخر رسالة من المستخدم في هذا القالب",
     },
 
-    Update: {
-      Version: (x: string) => `الإصدار الحالي: ${x}`,
-      IsLatest: "أنت على أحدث إصدار",
-      CheckUpdate: "التحقق من التحديثات",
-      IsChecking: "جارٍ التحقق من التحديثات...",
-      FoundUpdate: (x: string) => `تم العثور على إصدار جديد: ${x}`,
-      GoToUpdate: "انتقل للتحديث",
-    },
+
     SendKey: "زر الإرسال",
     Theme: "السمة",
     TightBorder: "وضع بدون حدود",
@@ -280,15 +273,7 @@ const ar: PartialLocaleType = {
         "عندما يتجاوز طول الرسائل التاريخية غير المضغوطة هذه القيمة، سيتم الضغط",
     },
 
-    Usage: {
-      Title: "التحقق من الرصيد",
-      SubTitle(used: any, total: any) {
-        return `تم استخدام $${used} هذا الشهر، إجمالي الاشتراك $${total}`;
-      },
-      IsChecking: "جارٍ التحقق...",
-      Check: "إعادة التحقق",
-      NoAccess: "أدخل مفتاح API أو كلمة مرور للوصول إلى الرصيد",
-    },
+
 
     Access: {
       SaasStart: {

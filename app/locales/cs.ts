@@ -181,14 +181,7 @@ const cs: PartialLocaleType = {
       SubTitle: "Nejnovější zpráva uživatele bude vyplněna do této šablony",
     },
 
-    Update: {
-      Version: (x: string) => `Aktuální verze: ${x}`,
-      IsLatest: "Jste na nejnovější verzi",
-      CheckUpdate: "Zkontrolovat aktualizace",
-      IsChecking: "Kontrola aktualizací...",
-      FoundUpdate: (x: string) => `Nalezena nová verze: ${x}`,
-      GoToUpdate: "Přejít na aktualizaci",
-    },
+
     SendKey: "Klávesa pro odeslání",
     Theme: "Téma",
     TightBorder: "Režim bez okrajů",
@@ -283,15 +276,7 @@ const cs: PartialLocaleType = {
         "Když nekomprimované historické zprávy překročí tuto hodnotu, dojde ke kompresi",
     },
 
-    Usage: {
-      Title: "Kontrola zůstatku",
-      SubTitle(used: any, total: any) {
-        return `Tento měsíc použito $${used}, celkový předplatný objem $${total}`;
-      },
-      IsChecking: "Probíhá kontrola…",
-      Check: "Znovu zkontrolovat",
-      NoAccess: "Zadejte API Key nebo přístupové heslo pro zobrazení zůstatku",
-    },
+
 
     Access: {
       SaasStart: {

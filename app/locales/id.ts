@@ -182,14 +182,6 @@ const id: PartialLocaleType = {
       SubTitle: "Pesan terbaru pengguna akan diisi ke template ini",
     },
 
-    Update: {
-      Version: (x: string) => `Versi Saat Ini: ${x}`,
-      IsLatest: "Sudah versi terbaru",
-      CheckUpdate: "Periksa Pembaruan",
-      IsChecking: "Sedang memeriksa pembaruan...",
-      FoundUpdate: (x: string) => `Versi Baru Ditemukan: ${x}`,
-      GoToUpdate: "Pergi ke Pembaruan",
-    },
     SendKey: "Kunci Kirim",
     Theme: "Tema",
     TightBorder: "Mode Tanpa Border",
@@ -284,15 +276,6 @@ const id: PartialLocaleType = {
         "Ketika pesan sejarah yang tidak terkompresi melebihi nilai ini, akan dikompresi",
     },
 
-    Usage: {
-      Title: "Cek Saldo",
-      SubTitle(used: any, total: any) {
-        return `Digunakan bulan ini $${used}, total langganan $${total}`;
-      },
-      IsChecking: "Sedang memeriksa…",
-      Check: "Periksa Lagi",
-      NoAccess: "Masukkan API Key atau kata sandi akses untuk melihat saldo",
-    },
 
     Access: {
       SaasStart: {

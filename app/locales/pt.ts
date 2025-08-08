@@ -180,14 +180,6 @@ const pt: PartialLocaleType = {
       SubTitle: "A mensagem mais recente será preenchida neste modelo",
     },
 
-    Update: {
-      Version: (x: string) => `Versão: ${x}`,
-      IsLatest: "Última versão",
-      CheckUpdate: "Verificar Atualização",
-      IsChecking: "Verificando atualização...",
-      FoundUpdate: (x: string) => `Nova versão encontrada: ${x}`,
-      GoToUpdate: "Atualizar",
-    },
     SendKey: "Tecla de Envio",
     Theme: "Tema",
     TightBorder: "Borda Ajustada",
@@ -281,15 +273,6 @@ const pt: PartialLocaleType = {
         "Irá comprimir se o comprimento das mensagens não comprimidas exceder o valor",
     },
 
-    Usage: {
-      Title: "Saldo da Conta",
-      SubTitle(used: any, total: any) {
-        return `Usado este mês ${used}, assinatura ${total}`;
-      },
-      IsChecking: "Verificando...",
-      Check: "Verificar",
-      NoAccess: "Insira a Chave API para verificar o saldo",
-    },
     Access: {
       SaasStart: {
         Title: "Usar NextChat AI",

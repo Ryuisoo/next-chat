@@ -188,14 +188,6 @@ const tw = {
       SubTitle: "使用者最新的一則訊息會填充到此範本",
     },
 
-    Update: {
-      Version: (x: string) => `目前版本：${x}`,
-      IsLatest: "已是最新版本",
-      CheckUpdate: "檢查更新",
-      IsChecking: "正在檢查更新...",
-      FoundUpdate: (x: string) => `發現新版本：${x}`,
-      GoToUpdate: "前往更新",
-    },
     SendKey: "傳送鍵",
     Theme: "主題",
     TightBorder: "緊湊邊框",
@@ -287,15 +279,6 @@ const tw = {
       SubTitle: "當未壓縮的歷史訊息超過該值時，將進行壓縮",
     },
 
-    Usage: {
-      Title: "帳戶餘額",
-      SubTitle(used: any, total: any) {
-        return `本月已使用 $${used}，訂閱總額 $${total}`;
-      },
-      IsChecking: "正在檢查…",
-      Check: "重新檢查",
-      NoAccess: "輸入 API Key 檢視餘額",
-    },
 
     Access: {
       SaasStart: {

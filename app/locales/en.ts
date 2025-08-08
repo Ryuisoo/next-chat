@@ -201,16 +201,7 @@ const en: LocaleType = {
       SubTitle: "Newest message will be filled to this template",
     },
 
-    Update: {
-      Version: (x: string) => `Version: ${x}`,
-      IsLatest: "Latest version",
-      CheckUpdate: "Check Update",
-      IsChecking: "Checking update...",
-      FoundUpdate: (x: string) => `Found new version: ${x}`,
-      GoToUpdate: "Update",
-      Success: "Update Successful.",
-      Failed: "Update Failed.",
-    },
+
     SendKey: "Send Key",
     Theme: "Theme",
     TightBorder: "Tight Border",
@@ -304,15 +295,7 @@ const en: LocaleType = {
         "Will compress if uncompressed messages length exceeds the value",
     },
 
-    Usage: {
-      Title: "Account Balance",
-      SubTitle(used: any, total: any) {
-        return `Used this month $${used}, subscription $${total}`;
-      },
-      IsChecking: "Checking...",
-      Check: "Check",
-      NoAccess: "Enter API Key to check balance",
-    },
+
     Access: {
       SaasStart: {
         Title: "Use NextChat AI",
@@ -815,61 +798,7 @@ const en: LocaleType = {
     Code: "Detected access code from url, confirm to apply? ",
     Settings: "Detected settings from url, confirm to apply?",
   },
-  SdPanel: {
-    Prompt: "Prompt",
-    NegativePrompt: "Negative Prompt",
-    PleaseInput: (name: string) => `Please input ${name}`,
-    AspectRatio: "Aspect Ratio",
-    ImageStyle: "Image Style",
-    OutFormat: "Output Format",
-    AIModel: "AI Model",
-    ModelVersion: "Model Version",
-    Submit: "Submit",
-    ParamIsRequired: (name: string) => `${name} is required`,
-    Styles: {
-      D3Model: "3d-model",
-      AnalogFilm: "analog-film",
-      Anime: "anime",
-      Cinematic: "cinematic",
-      ComicBook: "comic-book",
-      DigitalArt: "digital-art",
-      Enhance: "enhance",
-      FantasyArt: "fantasy-art",
-      Isometric: "isometric",
-      LineArt: "line-art",
-      LowPoly: "low-poly",
-      ModelingCompound: "modeling-compound",
-      NeonPunk: "neon-punk",
-      Origami: "origami",
-      Photographic: "photographic",
-      PixelArt: "pixel-art",
-      TileTexture: "tile-texture",
-    },
-  },
-  Sd: {
-    SubTitle: (count: number) => `${count} images`,
-    Actions: {
-      Params: "See Params",
-      Copy: "Copy Prompt",
-      Delete: "Delete",
-      Retry: "Retry",
-      ReturnHome: "Return Home",
-      History: "History",
-    },
-    EmptyRecord: "No images yet",
-    Status: {
-      Name: "Status",
-      Success: "Success",
-      Error: "Error",
-      Wait: "Waiting",
-      Running: "Running",
-    },
-    Danger: {
-      Delete: "Confirm to delete?",
-    },
-    GenerateParams: "Generate Params",
-    Detail: "Detail",
-  },
+
 };
 
 export default en;

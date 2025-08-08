@@ -1,12 +1,5 @@
 export const OWNER = "ChatGPTNextWeb";
 export const REPO = "ChatGPT-Next-Web";
-export const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
-export const PLUGINS_REPO_URL = `https://github.com/${OWNER}/NextChat-Awesome-Plugins`;
-export const ISSUE_URL = `https://github.com/${OWNER}/${REPO}/issues`;
-export const UPDATE_URL = `${REPO_URL}#keep-updated`;
-export const RELEASE_URL = `${REPO_URL}/releases`;
-export const FETCH_COMMIT_URL = `https://api.github.com/repos/${OWNER}/${REPO}/commits?per_page=1`;
-export const FETCH_TAG_URL = `https://api.github.com/repos/${OWNER}/${REPO}/tags?per_page=1`;
 export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 
 export const STABILITY_BASE_URL = "https://api.stability.ai";
@@ -49,8 +42,7 @@ export enum Path {
   Masks = "/masks",
   Plugins = "/plugins",
   Auth = "/auth",
-  Sd = "/sd",
-  SdNew = "/sd-new",
+
   Artifacts = "/artifacts",
   SearchChat = "/search-chat",
   McpMarket = "/mcp-market",
@@ -96,7 +88,7 @@ export enum StoreKey {
   Prompt = "prompt-store",
   Update = "chat-update",
   Sync = "sync",
-  SdList = "sd-list",
+
   Mcp = "mcp-store",
 }
 

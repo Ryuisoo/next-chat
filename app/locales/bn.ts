@@ -181,14 +181,7 @@ const bn: PartialLocaleType = {
       SubTitle: "ব্যবহারকারীর সর্বশেষ বার্তা এই টেমপ্লেটে পূরণ করা হবে",
     },
 
-    Update: {
-      Version: (x: string) => `বর্তমান সংস্করণ: ${x}`,
-      IsLatest: "এটি সর্বশেষ সংস্করণ",
-      CheckUpdate: "আপডেট পরীক্ষা করুন",
-      IsChecking: "আপডেট পরীক্ষা করা হচ্ছে...",
-      FoundUpdate: (x: string) => `নতুন সংস্করণ পাওয়া গিয়েছে: ${x}`,
-      GoToUpdate: "আপডেট করতে যান",
-    },
+
     SendKey: "পাঠানোর কী",
     Theme: "থিম",
     TightBorder: "বর্ডার-বিহীন মোড",
@@ -283,15 +276,7 @@ const bn: PartialLocaleType = {
         "যখন সংকুচিত ইতিহাস বার্তা এই মান ছাড়িয়ে যায়, তখন সংকুচিত করা হবে",
     },
 
-    Usage: {
-      Title: "ব্যালেন্স চেক",
-      SubTitle(used: any, total: any) {
-        return `এই মাসে ব্যবহৃত $${used}, সাবস্ক্রিপশন মোট $${total}`;
-      },
-      IsChecking: "পরীক্ষা করা হচ্ছে…",
-      Check: "পুনরায় পরীক্ষা করুন",
-      NoAccess: "ব্যালেন্স দেখতে API কী অথবা অ্যাক্সেস পাসওয়ার্ড প্রবেশ করুন",
-    },
+
 
     Access: {
       SaasStart: {

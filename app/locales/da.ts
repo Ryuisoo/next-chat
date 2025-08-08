@@ -198,16 +198,7 @@ const da: PartialLocaleType = {
       Title: "Tekstskabelon",
       SubTitle: "Den seneste besked placeres i denne skabelon",
     },
-    Update: {
-      Version: (x: string) => `Version: ${x}`,
-      IsLatest: "Du har nyeste version",
-      CheckUpdate: "Tjek efter opdatering",
-      IsChecking: "Tjekker...",
-      FoundUpdate: (x: string) => `Ny version fundet: ${x}`,
-      GoToUpdate: "Opdatér",
-      Success: "Opdatering lykkedes.",
-      Failed: "Opdatering mislykkedes.",
-    },
+
     SendKey: "Tast for send",
     Theme: "Tema",
     TightBorder: "Stram kant",
@@ -294,15 +285,7 @@ const da: PartialLocaleType = {
       SubTitle:
         "Hvis chatten bliver for lang, vil den komprimeres efter dette antal tegn",
     },
-    Usage: {
-      Title: "Brug og saldo",
-      SubTitle(used: any, total: any) {
-        return `Du har brugt $${used} i denne måned, og din grænse er $${total}.`;
-      },
-      IsChecking: "Tjekker...",
-      Check: "Tjek igen",
-      NoAccess: "Indtast API-nøgle for at se forbrug",
-    },
+
     Access: {
       AccessCode: {
         Title: "Adgangskode",
@@ -783,61 +766,7 @@ const da: PartialLocaleType = {
     Code: "Så ud til, at der var en kode i linket. Vil du bruge den?",
     Settings: "Så ud til, at der var indstillinger i linket. Vil du bruge dem?",
   },
-  SdPanel: {
-    Prompt: "Prompt",
-    NegativePrompt: "Negativ prompt",
-    PleaseInput: (name: string) => `Indtast: ${name}`,
-    AspectRatio: "Billedformat",
-    ImageStyle: "Stil",
-    OutFormat: "Uddataformat",
-    AIModel: "AI-model",
-    ModelVersion: "Version",
-    Submit: "Send",
-    ParamIsRequired: (name: string) => `${name} er krævet`,
-    Styles: {
-      D3Model: "3d-model",
-      AnalogFilm: "analog-film",
-      Anime: "anime",
-      Cinematic: "cinematisk",
-      ComicBook: "tegneserie",
-      DigitalArt: "digital-art",
-      Enhance: "enhance",
-      FantasyArt: "fantasy-art",
-      Isometric: "isometric",
-      LineArt: "line-art",
-      LowPoly: "low-poly",
-      ModelingCompound: "modeling-compound",
-      NeonPunk: "neon-punk",
-      Origami: "origami",
-      Photographic: "fotografisk",
-      PixelArt: "pixel-art",
-      TileTexture: "tile-texture",
-    },
-  },
-  Sd: {
-    SubTitle: (count: number) => `${count} billeder`,
-    Actions: {
-      Params: "Se indstillinger",
-      Copy: "Kopiér prompt",
-      Delete: "Slet",
-      Retry: "Prøv igen",
-      ReturnHome: "Til forsiden",
-      History: "Historik",
-    },
-    EmptyRecord: "Ingen billeder endnu",
-    Status: {
-      Name: "Status",
-      Success: "Ok",
-      Error: "Fejl",
-      Wait: "Venter",
-      Running: "I gang",
-    },
-    Danger: {
-      Delete: "Vil du slette?",
-    },
-    GenerateParams: "Genereringsvalg",
-    Detail: "Detaljer",
-  },
+
 };
 
 export default da;

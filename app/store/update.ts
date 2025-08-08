@@ -1,6 +1,4 @@
 import {
-  FETCH_COMMIT_URL,
-  FETCH_TAG_URL,
   ModelProvider,
   StoreKey,
 } from "../constant";
@@ -30,23 +28,8 @@ function formatVersionDate(t: string) {
 type VersionType = "date" | "tag";
 
 async function getVersion(type: VersionType) {
-  if (type === "date") {
-    const data = (await (await fetch(FETCH_COMMIT_URL)).json()) as {
-      commit: {
-        author: { name: string; date: string };
-      };
-      sha: string;
-    }[];
-    const remoteCommitTime = data[0].commit.author.date;
-    const remoteId = new Date(remoteCommitTime).getTime().toString();
-    return remoteId;
-  } else if (type === "tag") {
-    const data = (await (await fetch(FETCH_TAG_URL)).json()) as {
-      commit: { sha: string; url: string };
-      name: string;
-    }[];
-    return data.at(0)?.name;
-  }
+  // GitHub API calls removed - return current version
+  return type === "date" ? getClientConfig()?.commitDate : getClientConfig()?.version;
 }
 
 export const useUpdateStore = createPersistStore(
@@ -89,44 +72,7 @@ export const useUpdateStore = createPersistStore(
         set(() => ({
           remoteVersion: remoteId,
         }));
-        if (window.__TAURI__?.notification && isApp) {
-          // Check if notification permission is granted
-          await window.__TAURI__?.notification
-            .isPermissionGranted()
-            .then((granted) => {
-              if (!granted) {
-                return;
-              } else {
-                // Request permission to show notifications
-                window.__TAURI__?.notification
-                  .requestPermission()
-                  .then((permission) => {
-                    if (permission === "granted") {
-                      if (version === remoteId) {
-                        // Show a notification using Tauri
-                        window.__TAURI__?.notification.sendNotification({
-                          title: "NextChat",
-                          body: `${Locale.Settings.Update.IsLatest}`,
-                          icon: `${ChatGptIcon.src}`,
-                          sound: "Default",
-                        });
-                      } else {
-                        const updateMessage =
-                          Locale.Settings.Update.FoundUpdate(`${remoteId}`);
-                        // Show a notification for the new version using Tauri
-                        window.__TAURI__?.notification.sendNotification({
-                          title: "NextChat",
-                          body: updateMessage,
-                          icon: `${ChatGptIcon.src}`,
-                          sound: "Default",
-                        });
-                        clientUpdate();
-                      }
-                    }
-                  });
-              }
-            });
-        }
+        // Tauri notification removed - web only version
         console.log("[Got Upstream] ", remoteId);
       } catch (error) {
         console.error("[Fetch Upstream Commit Id]", error);

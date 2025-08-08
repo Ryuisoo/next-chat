@@ -188,14 +188,6 @@ const es: PartialLocaleType = {
       SubTitle: "El último mensaje del usuario se rellenará en esta plantilla",
     },
 
-    Update: {
-      Version: (x: string) => `Versión actual: ${x}`,
-      IsLatest: "Ya estás en la última versión",
-      CheckUpdate: "Buscar actualizaciones",
-      IsChecking: "Buscando actualizaciones...",
-      FoundUpdate: (x: string) => `Nueva versión encontrada: ${x}`,
-      GoToUpdate: "Ir a actualizar",
-    },
     SendKey: "Tecla de enviar",
     Theme: "Tema",
     TightBorder: "Modo sin borde",
@@ -293,16 +285,6 @@ const es: PartialLocaleType = {
         "Cuando los mensajes históricos no comprimidos superan este valor, se realizará la compresión",
     },
 
-    Usage: {
-      Title: "Consulta de saldo",
-      SubTitle(used: any, total: any) {
-        return `Saldo usado este mes: $${used}, total suscrito: $${total}`;
-      },
-      IsChecking: "Verificando…",
-      Check: "Revisar de nuevo",
-      NoAccess:
-        "Introduce la clave API o la contraseña de acceso para ver el saldo",
-    },
 
     Access: {
       SaasStart: {

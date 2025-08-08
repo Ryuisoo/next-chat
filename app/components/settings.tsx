@@ -38,7 +38,6 @@ import {
   SubmitKey,
   useChatStore,
   Theme,
-  useUpdateStore,
   useAccessStore,
   useAppConfig,
 } from "../store";
@@ -49,7 +48,7 @@ import Locale, {
   changeLang,
   getLang,
 } from "../locales";
-import { copyToClipboard, clientUpdate, semverCompare } from "../utils";
+import { copyToClipboard } from "../utils";
 import Link from "next/link";
 import {
   Anthropic,
@@ -64,11 +63,9 @@ import {
   GoogleSafetySettingsThreshold,
   OPENAI_BASE_URL,
   Path,
-  RELEASE_URL,
   STORAGE_KEY,
   ServiceProvider,
   SlotID,
-  UPDATE_URL,
   Stability,
   Iflytek,
   SAAS_CHAT_URL,
@@ -587,53 +584,12 @@ export function Settings() {
   const config = useAppConfig();
   const updateConfig = config.update;
 
-  const updateStore = useUpdateStore();
-  const [checkingUpdate, setCheckingUpdate] = useState(false);
-  const currentVersion = updateStore.formatVersion(updateStore.version);
-  const remoteId = updateStore.formatVersion(updateStore.remoteVersion);
-  const hasNewVersion = semverCompare(currentVersion, remoteId) === -1;
-  const updateUrl = getClientConfig()?.isApp ? RELEASE_URL : UPDATE_URL;
 
-  function checkUpdate(force = false) {
-    setCheckingUpdate(true);
-    updateStore.getLatestVersion(force).then(() => {
-      setCheckingUpdate(false);
-    });
-
-    console.log("[Update] local version ", updateStore.version);
-    console.log("[Update] remote version ", updateStore.remoteVersion);
-  }
 
   const accessStore = useAccessStore();
-  const shouldHideBalanceQuery = useMemo(() => {
-    const isOpenAiUrl = accessStore.openaiUrl.includes(OPENAI_BASE_URL);
 
-    return (
-      accessStore.hideBalanceQuery ||
-      isOpenAiUrl ||
-      accessStore.provider === ServiceProvider.Azure
-    );
-  }, [
-    accessStore.hideBalanceQuery,
-    accessStore.openaiUrl,
-    accessStore.provider,
-  ]);
 
-  const usage = {
-    used: updateStore.used,
-    subscription: updateStore.subscription,
-  };
-  const [loadingUsage, setLoadingUsage] = useState(false);
-  function checkUsage(force = false) {
-    if (shouldHideBalanceQuery) {
-      return;
-    }
 
-    setLoadingUsage(true);
-    updateStore.updateUsage(force).finally(() => {
-      setLoadingUsage(false);
-    });
-  }
 
   const enabledAccessControl = useMemo(
     () => accessStore.enabledAccessControl(),
@@ -646,13 +602,7 @@ export function Settings() {
   const customCount = promptStore.getUserPrompts().length ?? 0;
   const [shouldShowPromptModal, setShowPromptModal] = useState(false);
 
-  const showUsage = accessStore.isAuthorized();
-  useEffect(() => {
-    // checks per minutes
-    checkUpdate();
-    showUsage && checkUsage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
 
   useEffect(() => {
     const keydownEvent = (e: KeyboardEvent) => {
@@ -1551,38 +1501,7 @@ export function Settings() {
             </Popover>
           </ListItem>
 
-          <ListItem
-            title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
-            subTitle={
-              checkingUpdate
-                ? Locale.Settings.Update.IsChecking
-                : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
-            }
-          >
-            {checkingUpdate ? (
-              <LoadingIcon />
-            ) : hasNewVersion ? (
-              clientConfig?.isApp ? (
-                <IconButton
-                  icon={<ResetIcon></ResetIcon>}
-                  text={Locale.Settings.Update.GoToUpdate}
-                  onClick={() => clientUpdate()}
-                />
-              ) : (
-                <Link href={updateUrl} target="_blank" className="link">
-                  {Locale.Settings.Update.GoToUpdate}
-                </Link>
-              )
-            ) : (
-              <IconButton
-                icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Update.CheckUpdate}
-                onClick={() => checkUpdate(true)}
-              />
-            )}
-          </ListItem>
+
 
           <ListItem title={Locale.Settings.SendKey}>
             <Select
@@ -1869,31 +1788,7 @@ export function Settings() {
             </>
           )}
 
-          {!shouldHideBalanceQuery && !clientConfig?.isApp ? (
-            <ListItem
-              title={Locale.Settings.Usage.Title}
-              subTitle={
-                showUsage
-                  ? loadingUsage
-                    ? Locale.Settings.Usage.IsChecking
-                    : Locale.Settings.Usage.SubTitle(
-                        usage?.used ?? "[?]",
-                        usage?.subscription ?? "[?]",
-                      )
-                  : Locale.Settings.Usage.NoAccess
-              }
-            >
-              {!showUsage || loadingUsage ? (
-                <div />
-              ) : (
-                <IconButton
-                  icon={<ResetIcon></ResetIcon>}
-                  text={Locale.Settings.Usage.Check}
-                  onClick={() => checkUsage(true)}
-                />
-              )}
-            </ListItem>
-          ) : null}
+
 
           <ListItem
             title={Locale.Settings.Access.CustomModel.Title}

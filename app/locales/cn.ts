@@ -199,16 +199,7 @@ const cn = {
       SubTitle: "用户最新的一条消息会填充到此模板",
     },
 
-    Update: {
-      Version: (x: string) => `当前版本：${x}`,
-      IsLatest: "已是最新版本",
-      CheckUpdate: "检查更新",
-      IsChecking: "正在检查更新...",
-      FoundUpdate: (x: string) => `发现新版本：${x}`,
-      GoToUpdate: "前往更新",
-      Success: "更新成功！",
-      Failed: "更新失败",
-    },
+
     SendKey: "发送键",
     Theme: "主题",
     TightBorder: "无边框模式",
@@ -300,15 +291,7 @@ const cn = {
       SubTitle: "当未压缩的历史消息超过该值时，将进行压缩",
     },
 
-    Usage: {
-      Title: "余额查询",
-      SubTitle(used: any, total: any) {
-        return `本月已使用 $${used}，订阅总额 $${total}`;
-      },
-      IsChecking: "正在检查…",
-      Check: "重新检查",
-      NoAccess: "输入 API Key 或访问密码查看余额",
-    },
+
 
     Access: {
       SaasStart: {
@@ -805,61 +788,7 @@ const cn = {
     Topic: "主题",
     Time: "时间",
   },
-  SdPanel: {
-    Prompt: "画面提示",
-    NegativePrompt: "否定提示",
-    PleaseInput: (name: string) => `请输入${name}`,
-    AspectRatio: "横纵比",
-    ImageStyle: "图像风格",
-    OutFormat: "输出格式",
-    AIModel: "AI模型",
-    ModelVersion: "模型版本",
-    Submit: "提交生成",
-    ParamIsRequired: (name: string) => `${name}不能为空`,
-    Styles: {
-      D3Model: "3D模型",
-      AnalogFilm: "模拟电影",
-      Anime: "动漫",
-      Cinematic: "电影风格",
-      ComicBook: "漫画书",
-      DigitalArt: "数字艺术",
-      Enhance: "增强",
-      FantasyArt: "幻想艺术",
-      Isometric: "等角",
-      LineArt: "线描",
-      LowPoly: "低多边形",
-      ModelingCompound: "建模材料",
-      NeonPunk: "霓虹朋克",
-      Origami: "折纸",
-      Photographic: "摄影",
-      PixelArt: "像素艺术",
-      TileTexture: "贴图",
-    },
-  },
-  Sd: {
-    SubTitle: (count: number) => `共 ${count} 条绘画`,
-    Actions: {
-      Params: "查看参数",
-      Copy: "复制提示词",
-      Delete: "删除",
-      Retry: "重试",
-      ReturnHome: "返回首页",
-      History: "查看历史",
-    },
-    EmptyRecord: "暂无绘画记录",
-    Status: {
-      Name: "状态",
-      Success: "成功",
-      Error: "失败",
-      Wait: "等待中",
-      Running: "运行中",
-    },
-    Danger: {
-      Delete: "确认删除？",
-    },
-    GenerateParams: "生成参数",
-    Detail: "详情",
-  },
+
 };
 
 type DeepPartial<T> = T extends object
